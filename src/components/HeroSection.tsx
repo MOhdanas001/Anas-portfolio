@@ -5,6 +5,7 @@ export default function HeroSection() {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden text-white px-10">
       {/* Right: Text Content */}
+
       <div className="w-1/2 relative z-10 text-left px-10">
         <h1 className="text-7xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-400">
           MOHD. ANAS
