@@ -94,3 +94,78 @@
             height: 24px;
           }
         }
+
+         @keyframes twinkle {
+          0%, 100% { opacity: 0.3; }
+          50% { opacity: 1; }
+        }
+        @keyframes float {
+          0%, 100% { transform: translateY(0px) rotate(0deg); }
+          50% { transform: translateY(-10px) rotate(3deg); }
+        }
+        @keyframes float-slow {
+          0%, 100% { transform: translate(0, 0) rotate(0deg); }
+          25% { transform: translate(10px, -15px) rotate(5deg); }
+          50% { transform: translate(20px, 0px) rotate(10deg); }
+          75% { transform: translate(10px, 15px) rotate(5deg); }
+        }
+        @keyframes float-slower {
+          0%, 100% { transform: translate(0, 0) rotate(0deg); }
+          25% { transform: translate(-15px, 10px) rotate(-5deg); }
+          50% { transform: translate(0px, 20px) rotate(-10deg); }
+          75% { transform: translate(15px, 10px) rotate(-5deg); }
+        }
+        @keyframes orbit-1 {
+          0% { transform: translate(0, 0); }
+          25% { transform: translate(50px, -30px); }
+          50% { transform: translate(100px, 0px); }
+          75% { transform: translate(50px, 30px); }
+          100% { transform: translate(0, 0); }
+        }
+        @keyframes orbit-ring {
+          0% { transform: rotate(0deg) scale(1); opacity: 0; }
+          50% { opacity: 0.3; }
+          100% { transform: rotate(360deg) scale(1.5); opacity: 0; }
+        }
+        .animate-float-slow {
+          animation: float-slow 20s ease-in-out infinite;
+        }
+        .animate-float-slower {
+          animation: float-slower 25s ease-in-out infinite;
+        }
+        .animate-orbit-1 {
+          animation: orbit-1 30s linear infinite;
+        }
+        .group\\/skill:hover img {
+          animation: float 2s ease-in-out infinite;
+        }
+
+              @keyframes fadeInUp {
+          from {
+            opacity: 0;
+            transform: translateY(20px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
+        @keyframes floatText {
+          0%, 100% {
+            transform: translateY(0px) translateX(0px);
+            opacity: 0.1;
+          }
+          25% {
+            transform: translateY(-20px) translateX(10px);
+            opacity: 0.15;
+          }
+          50% {
+            transform: translateY(-10px) translateX(-10px);
+            opacity: 0.08;
+          }
+          75% {
+            transform: translateY(-30px) translateX(5px);
+            opacity: 0.12;
+          }
+        }

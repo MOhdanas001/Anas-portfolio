@@ -5,7 +5,7 @@ import { projects } from "../Data/data";
 
 export default function Project() {
   return (
-          <section className="relative min-h-screen flex items-center justify-center py-20 px-4">
+    <section className="relative min-h-screen flex items-center justify-center py-20 px-4">
       {/* Background Grid */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute inset-0" style={{

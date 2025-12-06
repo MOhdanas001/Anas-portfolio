@@ -1,27 +1,11 @@
-import React, { useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { experiences } from "../Data/data";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const experiences = [
-  {
-    role: "Assistant Web Developer",
-    company: "Protolabz eServices",
-    period: "October 2020 - current",
-    description:
-      "Built modern, responsive user interfaces for SaaS products. Collaborated with designers to implement pixel-perfect designs and ensure excellent UX.",
-    technologies: ["React", "CSS", "JavaScript", "Git", "Figma"],
-  },
-  {
-    role: "Web Development Intern",
-    company: "Protolabz eServices",
-    period: "May 2024 - October 2020",
-    description:
-      "Started my journey in web development, working on various projects and learning industry best practices. Contributed to open-source projects and internal tools.",
-    technologies: ["HTML", "CSS", "JavaScript", "jQuery", "Bootstrap"],
-  },
-];
+
 
 export default function ExperienceTimeline() {
   const timelineRef = useRef(null);
@@ -98,7 +82,7 @@ export default function ExperienceTimeline() {
   }, []);
 
   return (
-    <section className="py-20 px-4 relative overflow-hidden min-h-screen bg-black">
+    <section className="py-20 px-4 relative overflow-hidden min-h-screen ">
       {/* Starfield: single element using box-shadow for many stars (cheap) */}
       <div
         aria-hidden
@@ -136,9 +120,9 @@ export default function ExperienceTimeline() {
         </div>
 
         <div ref={timelineRef} className="relative">
-          <div className="absolute left-1/2 transform -translate-x-1/2 w-[2px] h-full bg-gray-900 overflow-hidden">
+          <div className="absolute left-1/2 transform -translate-x-1/2 w-0.5 h-full bg-gray-900 overflow-hidden">
             {/* timeline-line uses transform scaleY only */}
-            <div className="timeline-line w-full h-full bg-gradient-to-b from-white via-gray-300 to-white origin-top" />
+            <div className="timeline-line w-full h-full bg-linear-to-b from-white via-gray-300 to-white origin-top" />
           </div>
 
           <div className="space-y-16">
@@ -159,7 +143,7 @@ export default function ExperienceTimeline() {
                         className="relative bg-black bg-opacity-60 backdrop-blur-sm border border-gray-700 rounded-2xl p-6 transition-transform duration-300 hover:scale-[1.02] hover:shadow-lg"
                         style={{ transformStyle: "preserve-3d", backfaceVisibility: "hidden" }}
                       >
-                        <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-white to-transparent transform -translate-x-full group-hover:translate-x-0 transition-transform duration-1000" />
+                        <div className="absolute top-0 left-0 w-full h-px bg-linear-to-r from-transparent via-white to-transparent transform -translate-x-full group-hover:translate-x-0 transition-transform duration-1000" />
                         <div className={`inline-block mb-3 px-4 py-1 bg-white bg-opacity-10 border border-gray-400 rounded-full ${isLeft ? "float-right" : "float-left"}`}>
                           <span className="text-gray-300 text-sm font-semibold">{exp.period}</span>
                         </div>

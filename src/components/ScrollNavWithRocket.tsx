@@ -49,7 +49,7 @@ export default function ScrollNavWithRocket({
   }, [sections.length]);
 
   // Click handler to scroll to section
-  const handleSectionClick = (i:any) => {
+  const handleSectionClick = (i: number) => {
     const targetScroll = (i / (sections.length - 1)) * (document.documentElement.scrollHeight - window.innerHeight);
     window.scrollTo({ top: targetScroll, behavior: "smooth" });
   };

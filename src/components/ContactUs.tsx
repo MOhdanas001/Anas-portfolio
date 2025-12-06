@@ -14,6 +14,7 @@ export default function ContactSection() {
   useEffect(() => {
     const ctx = gsap.context(() => {
       // Header animation
+      if (headerRef.current)
       gsap.from(headerRef.current.children, {
         opacity: 0,
         y: -50,
@@ -23,6 +24,7 @@ export default function ContactSection() {
       });
 
       // Cards animation
+      if (cardsRef.current)
       gsap.from(cardsRef.current.children, {
         opacity: 0,
         y: 80,
@@ -63,7 +65,7 @@ export default function ContactSection() {
       // Star twinkling animation
       if (starsRef.current) {
         const stars = starsRef.current.querySelectorAll('.star');
-        stars.forEach((star: any) => {
+        stars.forEach((star: Element) => {
           gsap.to(star, {
             opacity: Math.random() * 0.3 + 0.2,
             duration: Math.random() * 2 + 1,
@@ -76,7 +78,7 @@ export default function ContactSection() {
     }, sectionRef);
 
     // Mouse parallax effect
-    const handleMouseMove = (e) => {
+    const handleMouseMove = (e: MouseEvent) => {
       const { clientX, clientY } = e;
       const { innerWidth, innerHeight } = window;
       
@@ -142,22 +144,7 @@ export default function ContactSection() {
       `}</style>
 
       <section ref={sectionRef} className="relative min-h-screen flex items-center justify-center py-20 px-4 overflow-hidden">
-        {/* Starfield Background */}
-        <div ref={starsRef} className="absolute inset-0">
-          {[...Array(100)].map((_, i) => (
-            <div
-              key={i}
-              className="star absolute w-1 h-1 bg-white rounded-full"
-              style={{
-                left: `${Math.random() * 100}%`,
-                top: `${Math.random() * 100}%`,
-                opacity: Math.random() * 0.7 + 0.3,
-                animationDelay: `${Math.random() * 3}s`
-              }}
-            />
-          ))}
-        </div>
-
+  
         {/* Nebula Clouds */}
         <div className="absolute top-20 left-0 w-96 h-96 bg-purple-600 rounded-full filter blur-3xl opacity-20" ref={nebula1Ref} />
         <div className="absolute bottom-0 right-0 w-96 h-96 bg-blue-600 rounded-full filter blur-3xl opacity-20" ref={nebula2Ref} />

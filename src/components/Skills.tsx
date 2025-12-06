@@ -1,60 +1,14 @@
-import React from 'react';
 
-// Organized skills data structure
-const skillCategories = [
-  {
-    category: "Technologies",
-    skills: [
-      { name: "Java", icon: "/svg/Java.svg" },
-      { name: "Spring Boot", icon: "/svg/Spring.svg" },
-      { name: "Next.js", icon: "/svg/Next.js.svg" },
-      { name: "React", icon: "/svg/React.svg" },
-      { name: "Node.js", icon: "/svg/Node.js.svg" },
-      { name: "JavaScript", icon: "/svg/JavaScript.svg" },
-      { name: "TypeScript", icon: "/svg/TypeScript.svg" },
-    ]
-  },
-  {
-    category: "DevOps & Tools",
-    skills: [
-      { name: "Docker", icon: "/svg/Docker.svg" },
-      { name: "Git", icon: "/svg/Git.svg" },
-      { name: "GitHub", icon: "/svg/GitHub.svg" },
-      { name: "Linux", icon: "/svg/Linux.svg" },
-    ]
-  },
-  {
-    category: "Database",
-    skills: [
-      { name: "MongoDB", icon: "/svg/MongoDB.svg" },
-      { name: "MySQL", icon: "/svg/MySQL.svg" },
-      { name: "Redis", icon: "/svg/Redis.svg" },
-      { name: "Firebase", icon: "/svg/Firebase.svg" },
-    ]
-  }
-];
+import { skillCategories } from "../Data/data";
+
+
 
 export default function Skills() {
+
+
   return (
     <section className="py-20 px-4 relative overflow-hidden min-h-screen flex items-center bg-black">
-      {/* Starfield Background */}
-      <div className="absolute inset-0">
-        {[...Array(150)].map((_, i) => (
-          <div
-            key={i}
-            className="absolute bg-white rounded-full"
-            style={{
-              width: Math.random() * 3 + 'px',
-              height: Math.random() * 3 + 'px',
-              top: Math.random() * 100 + '%',
-              left: Math.random() * 100 + '%',
-              opacity: Math.random() * 0.7 + 0.3,
-              animation: `twinkle ${Math.random() * 3 + 2}s ease-in-out infinite`,
-              animationDelay: Math.random() * 3 + 's'
-            }}
-          />
-        ))}
-      </div>
+
 
       {/* Floating Planets */}
       <div className="absolute top-10 right-20 w-24 h-24 opacity-20 animate-float-slow">
@@ -67,53 +21,7 @@ export default function Skills() {
         <img src="YOUR_PLANET_IMAGE_URL_3" alt="Planet" className="w-full h-full object-contain" />
       </div>
 
-      <style dangerouslySetInnerHTML={{__html: `
-        @keyframes twinkle {
-          0%, 100% { opacity: 0.3; }
-          50% { opacity: 1; }
-        }
-        @keyframes float {
-          0%, 100% { transform: translateY(0px) rotate(0deg); }
-          50% { transform: translateY(-10px) rotate(3deg); }
-        }
-        @keyframes float-slow {
-          0%, 100% { transform: translate(0, 0) rotate(0deg); }
-          25% { transform: translate(10px, -15px) rotate(5deg); }
-          50% { transform: translate(20px, 0px) rotate(10deg); }
-          75% { transform: translate(10px, 15px) rotate(5deg); }
-        }
-        @keyframes float-slower {
-          0%, 100% { transform: translate(0, 0) rotate(0deg); }
-          25% { transform: translate(-15px, 10px) rotate(-5deg); }
-          50% { transform: translate(0px, 20px) rotate(-10deg); }
-          75% { transform: translate(15px, 10px) rotate(-5deg); }
-        }
-        @keyframes orbit-1 {
-          0% { transform: translate(0, 0); }
-          25% { transform: translate(50px, -30px); }
-          50% { transform: translate(100px, 0px); }
-          75% { transform: translate(50px, 30px); }
-          100% { transform: translate(0, 0); }
-        }
-        @keyframes orbit-ring {
-          0% { transform: rotate(0deg) scale(1); opacity: 0; }
-          50% { opacity: 0.3; }
-          100% { transform: rotate(360deg) scale(1.5); opacity: 0; }
-        }
-        .animate-float-slow {
-          animation: float-slow 20s ease-in-out infinite;
-        }
-        .animate-float-slower {
-          animation: float-slower 25s ease-in-out infinite;
-        }
-        .animate-orbit-1 {
-          animation: orbit-1 30s linear infinite;
-        }
-        .group\\/skill:hover img {
-          animation: float 2s ease-in-out infinite;
-        }
-      `}} />
-      
+ 
       <div className="max-w-7xl mx-auto relative z-10 w-full">
         <div className="text-center mb-16">
           <h2 className="text-6xl font-bold text-white tracking-widest mb-4 relative inline-block">
