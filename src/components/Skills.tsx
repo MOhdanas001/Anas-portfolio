@@ -1,8 +1,5 @@
 
 import { skillCategories } from "../Data/data";
-
-
-
 export default function Skills() {
 
 
@@ -86,7 +83,7 @@ export default function Skills() {
                 </div>
                 
                 {/* Scan Line Effect */}
-                <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white to-transparent opacity-0 group-hover:opacity-5 transform -translate-y-full group-hover:translate-y-full transition-all duration-2000 pointer-events-none rounded-2xl"></div>
+                <div className="absolute inset-0 bg-linear-to-b from-transparent via-white to-transparent opacity-0 group-hover:opacity-5 transform -translate-y-full group-hover:translate-y-full transition-all duration-2000 pointer-events-none rounded-2xl"></div>
                 
                 {/* Particle Effect */}
                 <div className="absolute top-1/2 left-1/2 w-2 h-2 bg-white rounded-full opacity-0 group-hover:opacity-100 transform -translate-x-1/2 -translate-y-1/2 group-hover:scale-[50] transition-all duration-1000 pointer-events-none blur-xl"></div>

@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import  { useEffect, useRef } from 'react';
 import { Mail, Linkedin, Download } from 'lucide-react';
 import { gsap } from 'gsap';
 
@@ -154,21 +154,21 @@ export default function ContactSection() {
           <div className="text-center mb-12" ref={headerRef}>
             <h2 className="text-6xl font-bold text-white tracking-tight mb-4 relative inline-block">
               <span className="cosmic-text">LET'S CONNECT</span>
-              <span className="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-transparent via-cyan-400 to-transparent"></span>
+              <span className="absolute -bottom-2 left-0 w-full h-1 bg-linear-to-r from-transparent via-cyan-400 to-transparent"></span>
             </h2>
             <p className="text-gray-300 text-lg mt-4">🚀 Ready to launch your next project into orbit? Let's talk.</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8" ref={cardsRef}>
-            <div className="col-span-2 relative bg-gradient-to-br from-purple-900/20 via-black/40 to-blue-900/20 backdrop-blur-sm border border-cyan-500/30 rounded-2xl p-8 shadow-2xl shadow-cyan-500/10">
+            <div className="col-span-2 relative bg-linear-to-br from-purple-900/20 via-black/40 to-blue-900/20 backdrop-blur-sm border border-cyan-500/30 rounded-2xl p-8 shadow-2xl shadow-cyan-500/10">
               <p className="text-gray-200 text-lg mb-6">
                 ✨ I'm open to collaboration, freelance work, and full-time opportunities. 
                 Reach out via email or connect on LinkedIn and I'll get back to you at lightspeed.
               </p>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <a href="mailto:kai.sakurai@example.com" className="group flex items-center gap-4 p-4 bg-gradient-to-br from-cyan-500/10 to-blue-600/10 rounded-xl border border-cyan-500/30 hover:border-cyan-400/60 hover:shadow-lg hover:shadow-cyan-500/20 transition-all duration-300">
-                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-cyan-400 to-blue-500 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                <a href="mailto:kai.sakurai@example.com" className="group flex items-center gap-4 p-4 bg-linear-to-br from-cyan-500/10 to-blue-600/10 rounded-xl border border-cyan-500/30 hover:border-cyan-400/60 hover:shadow-lg hover:shadow-cyan-500/20 transition-all duration-300">
+                  <div className="w-12 h-12 rounded-xl bg-linear-to-br from-cyan-400 to-blue-500 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                     <Mail className="w-5 h-5 text-white" />
                   </div>
                   <div>
@@ -177,8 +177,8 @@ export default function ContactSection() {
                   </div>
                 </a>
 
-                <a href="#" className="group flex items-center gap-4 p-4 bg-gradient-to-br from-blue-500/10 to-purple-600/10 rounded-xl border border-blue-500/30 hover:border-blue-400/60 hover:shadow-lg hover:shadow-blue-500/20 transition-all duration-300">
-                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-400 to-purple-600 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                <a href="#" className="group flex items-center gap-4 p-4 bg-linear-to-br from-blue-500/10 to-purple-600/10 rounded-xl border border-blue-500/30 hover:border-blue-400/60 hover:shadow-lg hover:shadow-blue-500/20 transition-all duration-300">
+                  <div className="w-12 h-12 rounded-xl bg-linear-to-br from-blue-400 to-purple-600 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                     <Linkedin className="w-5 h-5 text-white" />
                   </div>
                   <div>
@@ -189,16 +189,16 @@ export default function ContactSection() {
               </div>
 
               <div className="mt-8">
-                <a href="#" className="inline-flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 border border-cyan-400/40 rounded-lg text-white hover:border-cyan-300/60 hover:shadow-lg hover:shadow-cyan-500/30 transition-all duration-300">
+                <a href="#" className="inline-flex items-center gap-3 px-6 py-3 bg-linear-to-r from-cyan-500/20 to-blue-500/20 border border-cyan-400/40 rounded-lg text-white hover:border-cyan-300/60 hover:shadow-lg hover:shadow-cyan-500/30 transition-all duration-300">
                   <Download className="w-5 h-5" />
                   Download Resume
                 </a>
               </div>
             </div>
 
-            <div className="relative bg-gradient-to-br from-purple-900/20 via-black/30 to-blue-900/20 border border-purple-500/30 rounded-2xl p-6 flex flex-col items-center justify-center shadow-2xl shadow-purple-500/10">
-              <div className="w-28 h-28 bg-gradient-to-br from-cyan-500/20 to-purple-500/20 rounded-lg flex items-center justify-center mb-4 border border-cyan-500/30">
-                <div className="text-5xl font-bold bg-gradient-to-br from-cyan-400 to-purple-400 bg-clip-text text-transparent">@</div>
+            <div className="relative bg-linear-to-br from-purple-900/20 via-black/30 to-blue-900/20 border border-purple-500/30 rounded-2xl p-6 flex flex-col items-center justify-center shadow-2xl shadow-purple-500/10">
+              <div className="w-28 h-28 bg-linear-to-br from-cyan-500/20 to-purple-500/20 rounded-lg flex items-center justify-center mb-4 border border-cyan-500/30">
+                <div className="text-5xl font-bold bg-linear-to-br from-cyan-400 to-purple-400 bg-clip-text text-transparent">@</div>
               </div>
               <p className="text-gray-300 text-center">
                 🌟 Prefer another platform? Share a message and I'll respond within 48 hours.
