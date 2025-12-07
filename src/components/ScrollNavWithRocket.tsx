@@ -2,9 +2,10 @@ import { useEffect, useRef, useState } from "react";
 
 
 export default function ScrollNavWithRocket({ 
-  sections = ['Hero', 'Skills', 'Projects', 'About', 'Contact'] 
+  sections = ['Home', 'Skills', 'Projects', 'About', 'Contact'] 
 }) {
   const [currentSection, setCurrentSection] = useState(0);
+  const [mobileOpen, setMobileOpen] = useState(false);
   const rocketRef = useRef<HTMLDivElement>(null);
   const tickingRef = useRef(false);
 
@@ -14,26 +15,22 @@ export default function ScrollNavWithRocket({
       tickingRef.current = true;
       
       requestAnimationFrame(() => {
-        const scrollY = window.scrollY || window.pageYOffset;
+        const scrollY = window.scrollY;
         const docHeight = document.documentElement.scrollHeight - window.innerHeight;
         const maxScroll = Math.max(1, docHeight);
-        
-        // Progress from 0 to 1 based on actual scroll
+
         let progress = scrollY / maxScroll;
         progress = Math.min(1, Math.max(0, progress));
 
-        // Rocket Y position - start at 10vh, end at 90vh
         const startY = window.innerHeight * 0.1;
         const endY = window.innerHeight * 0.9;
         const rocketY = startY + (endY - startY) * progress;
 
-        // Apply transform to rocket
         if (rocketRef.current) {
-          const rotate = progress * 25; // slight rotation as it goes down
+          const rotate = progress * 25; 
           rocketRef.current.style.transform = `translateY(${rocketY}px) rotate(${rotate}deg)`;
         }
 
-        // Update current section
         const sectionIndex = Math.round(progress * (sections.length - 1));
         setCurrentSection(sectionIndex);
 
@@ -56,7 +53,8 @@ export default function ScrollNavWithRocket({
 
   return (
     <>
-      <div className="fixed right-2 top-0 z-40 pointer-events-none" style={{ width: '200px', height: '100vh' }}>
+      {/* Desktop/Tablet: side nav */}
+      <div className="hidden md:block fixed right-4 top-0 z-40 pointer-events-none w-48 h-screen">
         {/* Rocket */}
         <div
           ref={rocketRef}
@@ -72,15 +70,15 @@ export default function ScrollNavWithRocket({
 
         {/* Section labels in rocket's path */}
         <div className="absolute right-12 top-0" style={{ height: '100vh', paddingTop: '10vh', paddingBottom: '10vh' }}>
-          <div className="relative h-full flex flex-col justify-between">
+          <div className="relative h-full flex flex-col justify-between pr-2">
             {sections.map((label, i) => (
               <button
                 key={i}
                 onClick={() => handleSectionClick(i)}
-                className={`text-right pointer-events-auto transition-all duration-300 cursor-pointer hover:scale-110 ${
+                className={`text-right pointer-events-auto transition-all duration-300 cursor-pointer hover:scale-105 text-sm ${
                   currentSection === i 
-                    ? 'font-bold  opacity-100 bg-white/10 border border-white/20 rounded text-white text-sm px-4 py-2' 
-                    : 'text-gray-500 text-sm opacity-60 hover:opacity-100'
+                    ? 'font-semibold opacity-100 bg-white/10 border border-white/20 rounded text-white px-3 py-1' 
+                    : 'text-gray-400 opacity-70 hover:opacity-100'
                 }`}
                 style={{ 
                   whiteSpace: 'nowrap',
@@ -90,6 +88,36 @@ export default function ScrollNavWithRocket({
                 {label}
               </button>
             ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Mobile: floating launcher and panel */}
+      <div className="md:hidden">
+        <div className="fixed bottom-6 right-4 z-50">
+          <button
+            onClick={() => setMobileOpen((s) => !s)}
+            aria-label={mobileOpen ? 'Close navigation' : 'Open navigation'}
+            className="bg-black/70 backdrop-blur-sm border border-white/20 p-2 rounded-full shadow-lg"
+          >
+            <img src="./svg/rocket.svg" alt="rocket" className="w-10 h-10" />
+          </button>
+        </div>
+
+        {/* Panel */}
+        <div className={`fixed right-4 bottom-20 z-40 transition-transform duration-300 ${mobileOpen ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0 pointer-events-none'}`}>
+          <div className="w-56 max-h-[60vh] overflow-auto bg-black/80 backdrop-blur rounded-lg border border-white/20 p-3">
+            <div className="flex flex-col gap-2">
+              {sections.map((label, i) => (
+                <button
+                  key={i}
+                  onClick={() => { handleSectionClick(i); setMobileOpen(false); }}
+                  className={`text-left w-full transition-all duration-200 px-3 py-2 rounded text-sm ${currentSection === i ? 'bg-white/10 text-white font-semibold' : 'text-gray-300 hover:bg-white/5'}`}
+                >
+                  {label}
+                </button>
+              ))}
+            </div>
           </div>
         </div>
       </div>

@@ -4,24 +4,10 @@ export default function Skills() {
 
 
   return (
-    <section className="py-20 px-4 relative overflow-hidden min-h-screen flex items-center bg-black">
-
-
-      {/* Floating Planets */}
-      <div className="absolute top-10 right-20 w-24 h-24 opacity-20 animate-float-slow">
-        <img src="YOUR_PLANET_IMAGE_URL_1" alt="Planet" className="w-full h-full object-contain" />
-      </div>
-      <div className="absolute bottom-20 left-10 w-32 h-32 opacity-15 animate-float-slower">
-        <img src="YOUR_PLANET_IMAGE_URL_2" alt="Planet" className="w-full h-full object-contain" />
-      </div>
-      <div className="absolute top-1/2 right-10 w-20 h-20 opacity-10 animate-orbit-1">
-        <img src="YOUR_PLANET_IMAGE_URL_3" alt="Planet" className="w-full h-full object-contain" />
-      </div>
-
- 
+    <section className="py-20 px-4 relative overflow-hidden min-h-screen flex items-center "> 
       <div className="max-w-7xl mx-auto relative z-10 w-full">
         <div className="text-center mb-16">
-          <h2 className="text-6xl font-bold text-white tracking-widest mb-4 relative inline-block">
+          <h2 className="text-6xl font-bold bg-clip-text text-transparent bg-linear-to-r from-gray-400 to-gray-500 tracking-widest mb-4 relative inline-block">
             SKILLS
             <span className="absolute -bottom-2 left-0 w-full h-1 bg-white"></span>
           </h2>

@@ -82,7 +82,7 @@ export default function ExperienceTimeline() {
   }, []);
 
   return (
-    <section className="py-20 px-4 relative overflow-hidden min-h-screen ">
+    <section className="py-8 sm:py-12 md:py-16 lg:py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden min-h-screen">
       {/* Starfield: single element using box-shadow for many stars (cheap) */}
       <div
         aria-hidden
@@ -111,53 +111,53 @@ export default function ExperienceTimeline() {
       </div>
 
       <div className="max-w-6xl mx-auto relative z-10">
-        <div className="text-center mb-20">
-          <h2 className="text-5xl md:text-6xl font-bold text-white tracking-widest mb-4 relative inline-block">
+        <div className="text-center mb-8 sm:mb-12 md:mb-16 lg:mb-20">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold bg-clip-text text-transparent bg-linear-to-r from-gray-400 to-gray-500 tracking-tight sm:tracking-widest mb-2 sm:mb-4 relative inline-block">
             EXPERIENCE
-            <span className="absolute -bottom-2 left-0 w-full h-1 bg-white"></span>
+            <span className="absolute -bottom-1 sm:-bottom-2 left-0 w-full h-0.5 sm:h-1 bg-white"></span>
           </h2>
-          <p className="text-gray-400 text-lg mt-6">A journey through the cosmos of development</p>
+          <p className="text-gray-400 text-sm sm:text-base md:text-lg mt-4 sm:mt-6">A journey through the cosmos of development</p>
         </div>
 
         <div ref={timelineRef} className="relative">
-          <div className="absolute left-1/2 transform -translate-x-1/2 w-0.5 h-full bg-gray-900 overflow-hidden">
+          <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-0.5 h-full bg-gray-900 overflow-hidden">
             {/* timeline-line uses transform scaleY only */}
             <div className="timeline-line w-full h-full bg-linear-to-b from-white via-gray-300 to-white origin-top" />
           </div>
 
-          <div className="space-y-16">
+          <div className="space-y-8 sm:space-y-12 md:space-y-16">
             {experiences.map((exp, index) => {
               const isLeft = index % 2 === 0;
               return (
                 <div
                   key={index}
-                  className={`timeline-item flex items-center ${isLeft ? "flex-row" : "flex-row-reverse"} gap-8`}
+                  className={`timeline-item flex flex-col md:flex-row items-center ${isLeft ? "md:flex-row" : "md:flex-row-reverse"} gap-4 sm:gap-6 md:gap-8`}
                 >
-                  <div className={`w-5/12 ${isLeft ? "text-right" : "text-left"}`}>
-                    <div className="group relative">
+                  <div className={`w-full md:w-5/12 ${isLeft ? "md:text-right text-left" : "md:text-left text-left"}`}>
+                    <div className="group relative w-full">
                       {/* cheaper glow: subtle box-shadow and reduced blur */}
-                      <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-8 transition-opacity duration-300 pointer-events-none"
+                      <div className="absolute inset-0 rounded-lg sm:rounded-xl md:rounded-2xl opacity-0 group-hover:opacity-8 transition-opacity duration-300 pointer-events-none"
                            style={{ boxShadow: "0 6px 20px rgba(255,255,255,0.04)" }} />
 
                       <div
-                        className="relative bg-black bg-opacity-60 backdrop-blur-sm border border-gray-700 rounded-2xl p-6 transition-transform duration-300 hover:scale-[1.02] hover:shadow-lg"
+                        className="relative bg-black bg-opacity-60 backdrop-blur-sm border border-gray-700 rounded-lg sm:rounded-xl md:rounded-2xl p-4 sm:p-5 md:p-6 transition-transform duration-300 hover:scale-[1.02] hover:shadow-lg"
                         style={{ transformStyle: "preserve-3d", backfaceVisibility: "hidden" }}
                       >
                         <div className="absolute top-0 left-0 w-full h-px bg-linear-to-r from-transparent via-white to-transparent transform -translate-x-full group-hover:translate-x-0 transition-transform duration-1000" />
-                        <div className={`inline-block mb-3 px-4 py-1 bg-white bg-opacity-10 border border-gray-400 rounded-full ${isLeft ? "float-right" : "float-left"}`}>
-                          <span className="text-gray-300 text-sm font-semibold">{exp.period}</span>
+                        <div className={`inline-block mb-2 sm:mb-3 px-3 sm:px-4 py-0.5 sm:py-1 bg-white bg-opacity-10 border border-gray-400 rounded-full`}>
+                          <span className="text-black text-xs sm:text-sm font-semibold">{exp.period}</span>
                         </div>
 
-                        <div className="clear-both">
-                          <h3 className="text-2xl font-bold text-white mb-2 group-hover:text-gray-300 transition-colors duration-300">
+                        <div>
+                          <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-white mb-1 sm:mb-2 group-hover:text-gray-300 transition-colors duration-300">
                             {exp.role}
                           </h3>
-                          <p className="text-gray-400 font-semibold mb-3">{exp.company}</p>
-                          <p className="text-gray-500 mb-4 leading-relaxed">{exp.description}</p>
+                          <p className="text-gray-400 font-semibold mb-2 sm:mb-3 text-sm">{exp.company}</p>
+                          <p className="text-gray-500 mb-3 sm:mb-4 leading-relaxed text-sm">{exp.description}</p>
 
-                          <div className={`flex flex-wrap gap-2 ${isLeft ? "justify-end" : "justify-start"}`}>
+                          <div className="flex flex-wrap gap-2">
                             {exp.technologies.map((tech, i) => (
-                              <span key={i} className="px-3 py-1 text-xs font-semibold text-gray-400 bg-gray-900 rounded-full border border-gray-700">
+                              <span key={i} className="px-2 sm:px-3 py-0.5 sm:py-1 text-xs font-semibold text-gray-400 bg-gray-900 rounded-full border border-gray-700">
                                 {tech}
                               </span>
                             ))}
@@ -167,12 +167,12 @@ export default function ExperienceTimeline() {
                     </div>
                   </div>
 
-                  <div className="relative flex items-center justify-center w-2/12">
-                    <div className="timeline-dot w-6 h-6 bg-white rounded-full border-4 border-black z-10 shadow-sm" />
-                    <div className="absolute w-6 h-6 rounded-full animate-ping opacity-20" />
+                  <div className="relative flex items-center justify-center hidden md:flex w-2/12">
+                    <div className="timeline-dot w-5 sm:w-6 h-5 sm:h-6 bg-white rounded-full border-4 border-black z-10 shadow-sm" />
+                    <div className="absolute w-5 sm:w-6 h-5 sm:h-6 rounded-full animate-ping opacity-20" />
                   </div>
 
-                  <div className="w-5/12"></div>
+                  <div className="md:w-5/12"></div>
                 </div>
               );
             })}
