@@ -8,8 +8,8 @@ export const titles = ['Software Developer', 'Full Stack Engineer', 'UI/UX Enthu
  
  export const skills = [
   { name: 'Node.js', color: 'from-blue-500 to-yellow-400', icon: '/Node.js.svg' },
-  { name: 'Java', color: 'from-blue-500 to-yellow-400', icon: '/Java.svg' },
-  { name: 'Spring Boot', color: 'from-blue-500 to-yellow-400', icon: '/Spring.svg' },
+  { name: 'Python', color: 'from-blue-500 to-yellow-400', icon: '/Python.svg' },
+  { name: 'Fast API', color: 'from-blue-500 to-yellow-400', icon: '/FastAPI.svg' },
   { name: 'Next.js', color: 'from-yellow-400 to-orange-500', icon: '/Next.js.svg' },
   { name: 'MongoDB', color: 'from-green-600 to-teal-700', icon: '/MongoDB.svg' },
   { name: 'MySQL', color: 'from-green-600 to-teal-700', icon: '/MySQL.svg' },
@@ -17,12 +17,12 @@ export const titles = ['Software Developer', 'Full Stack Engineer', 'UI/UX Enthu
 
 export const projects = [
   {
-    title: 'Famished AI',
-    subtitle: 'Online Food Ordering Platform',
-    description: 'Retro-style mobile game with pixel art graphics and engaging gameplay',
-    tech: ['Solio (next+native)', 'Springboot', 'Firebase' , 'postgreSQL'],
+    title: 'AI text Analyzer',
+    subtitle: 'AI powered text analysis tool',
+    description: 'Integraed OpenAI API to analyze and summarize text inputs, providing insights and recommendations.',
+    tech: ['python', 'Fast API', 'OpenAI API', 'HTML', 'CSS', 'JavaScript'],
     color: 'from-pink-500 to-rose-600',
-    icon: '/famished.webp',
+    icon: '/vipi.webp',
     live: 'https://www.famished.ai/',
     github: 'https://github.com/anas/pixel-saga'
   },
@@ -37,14 +37,14 @@ export const projects = [
     github: 'https://github.com/anas/innovatehub'
   },
   {
-    title: 'NeuralNet',
-    subtitle: 'AI Data Viz Tool',
-    description: 'Interactive visualization tool for neural network architectures',
-    tech: ['Python', 'TensorFlow', 'D3.js'],
+    title: 'CarPot',
+    subtitle: 'Automative Service Platform',
+    description: 'Creted Interravtive platform for car owners to book services, schedule maintenance, and access automotive resources.',
+    tech: ['Python', 'Next.js', 'typeScript', 'MongoDB'],
     color: 'from-purple-500 to-pink-600',
-    icon: '/ai-icon.png',
-    live: 'https://example.com/neuralnet',
-    github: 'ttps://github.com/anas/innovatehub'
+    icon: '/CarpotDarkLogoImage.png',
+    live: 'https://carpot.com',
+    github: 'https://github.com/anas/innovatehub'
   }
 ];
 
@@ -72,8 +72,8 @@ export const skillCategories = [
   {
     category: "Technologies",
     skills: [
-      { name: "Java", icon: "/svg/Java.svg" },
-      { name: "Spring Boot", icon: "/svg/Spring.svg" },
+      { name: "Python", icon: "/svg/Python.svg" },
+      { name: "Fast API", icon: "/svg/FastAPI.svg" },
       { name: "Next.js", icon: "/svg/Next.js.svg" },
       { name: "React", icon: "/svg/React.svg" },
       { name: "Node.js", icon: "/svg/Node.js.svg" },

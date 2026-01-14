@@ -42,19 +42,7 @@ export default function Project() {
                 {/* Content */}
                 <div className="relative z-10 flex flex-col h-full">
                   {/* Icon */}
-                  <div className="relative w-16 h-16 mb-6 flex items-center justify-center">
-                    {/* Rotating Ring */}
-                    <div className="absolute inset-0 border-2 border-white rounded-xl opacity-0 group-hover:opacity-50 group-hover:animate-spin transition-opacity duration-300" style={{ animationDuration: '3s' }}></div>
-                    
-                    {/* Icon/Image */}
-                    <div className="relative w-full h-full bg-white rounded-xl flex items-center justify-center transform transition-all duration-500 group-hover:scale-110 group-hover:rotate-6">
-                      <img 
-                        src={project.icon} 
-                        alt={`${project.title} icon`}
-                        className="w-10 h-10 object-contain"
-                      />
-                    </div>
-                  </div>
+                
                   
                   {/* Title & Subtitle */}
                   <h3 className="text-2xl font-bold text-white mb-2 transition-colors duration-300">
