@@ -23,7 +23,7 @@ export const projects = [
     tech: ['python', 'Fast API', 'OpenAI API', 'HTML', 'CSS', 'JavaScript'],
     color: 'from-pink-500 to-rose-600',
     icon: '/vipi.webp',
-    live: 'https://www.famished.ai/',
+    live: 'https://ai-text-analyzer.vercel.app/',
     github: 'https://github.com/anas/pixel-saga'
   },
   {
@@ -43,7 +43,7 @@ export const projects = [
     tech: ['Python', 'Next.js', 'typeScript', 'MongoDB'],
     color: 'from-purple-500 to-pink-600',
     icon: '/CarpotDarkLogoImage.png',
-    live: 'https://carpot.com',
+    live: 'https://www.carpot.com',
     github: 'https://github.com/anas/innovatehub'
   }
 ];
